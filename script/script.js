@@ -39,8 +39,8 @@ function searchBokks(searchTerm){
         const title = bookList[index].title.toLowerCase();
         
         if (title.indexOf(searchTerm.toLowerCase()) >= 0) 
-        {
-            filterdList.push(bookList[0]);
+        {            
+            filterdList.push(bookList[index]);
         }
     }
 
