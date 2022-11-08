@@ -1,8 +1,10 @@
 'use strict';
 /* Vad ska vi göra här? */
-console.log('test');
 
-const searchInput = null;
+/*const searchInput = document.children[0].children[1].children[1].children[1];*/
+const searchField = document.getElementById("searchField");
+searchField.addEventListener("keyup", handelKeyPress(e));
+
 const bookList = [
     {
         id: 1,
@@ -16,14 +18,15 @@ const bookList = [
     }
 ];
 
-function handelKeyPress(input){
+
+function handelKeyPress(e){
     /* 
         Ska taemot och läsa av värdet i i nputfältet.
         Skicka värdet till searchBokks
         SearchBooks returnerar en filtrerad lista.
         Den filtrerade listan skickas till renderBookList
     */
-    searchBokks(input)
+    searchBokks(e)
 }
 
 function searchBokks(searchTerm){
@@ -44,12 +47,14 @@ function searchBokks(searchTerm){
         }
     }
 
-    console.log(filterdList);
+    return filterdList;
 }
 
-searchBokks('e');
 
-function renderBookList(){
+
+function renderBookList(bookList){
+
+    
 
 }
 
