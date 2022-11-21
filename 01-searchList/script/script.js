@@ -15,7 +15,7 @@ searchField.addEventListener("keyup", (e) =>
         bookList.filter(({title, author}) => {
             const searchTerm = e.target.value.toLowerCase();
             if(searchTerm){
-            return title.toLowerCase().indexOf(searchTerm) >= 0 || author.toLowerCase().indexOf(searchTerm) >= 0}
+                return title.toLowerCase().indexOf(searchTerm) >= 0 || author.toLowerCase().indexOf(searchTerm) >= 0}
             else{
                 return [].length = 0;
             }
