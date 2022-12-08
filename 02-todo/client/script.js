@@ -11,7 +11,7 @@ let titleValid = false;
 let descriptionValid = false;
 let dueDateValid = false;
 
-const api = new Api("localhost:5000/tasks")
+const api = new Api("http://localhost:5000/tasks")
 
 function validateField(field){
     const {name, value} = field;

@@ -9,8 +9,8 @@ app.use(express.json())
 .use(express.urlencoded({extended:false}))
 .use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Heders", "*")
-    res.header("Access-Control-Allow-Method", "*");
+    res.header("Access-Control-Allow-Headers", "*");
+    res.header("Access-Control-Allow-Methods", "*");
 
     next();
 });
@@ -30,6 +30,7 @@ app.get('/tasks', async (req, res) => {
 app.post("/tasks", async(req,res) =>{
     try {
         const task = req.body;
+        console.log(req.body)
         const listBuffer = await fs.readFile("./tasks.json");
         const currentTasks = JSON.parse(listBuffer);
         let nextTaskId = 1;
