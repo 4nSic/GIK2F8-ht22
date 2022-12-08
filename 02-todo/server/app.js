@@ -15,7 +15,7 @@ app.use(express.json())
     next();
 });
 
-app.get('/task', async (req, res) => {
+app.get('/tasks', async (req, res) => {
     try{
         const task = await fs.readFile("./tasks.json");
         res.status(425).send(JSON.parse(task));
@@ -27,7 +27,7 @@ app.get('/task', async (req, res) => {
 
 });
 
-app.post("/task", async(req,res) =>{
+app.post("/tasks", async(req,res) =>{
     try {
         const task = req.body;
         const listBuffer = await fs.readFile("./tasks.json");
@@ -52,7 +52,7 @@ app.post("/task", async(req,res) =>{
     }
 });
 
-app.delete("/task/:id", async(req, res) =>{
+app.delete("/tasks/:id", async(req, res) =>{
     /*localhost:5000/task/id*/
     const id = req.params.id;
     try {
