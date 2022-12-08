@@ -63,9 +63,7 @@ function onSubmit(e){
     e.preventDefault();
     
     if (titleValid && descriptionValid && dueDateValid) {
-        console.log('Submit')
-        saveTask();
-            
+        saveTask();      
     }
 
 }
@@ -78,5 +76,14 @@ function saveTask(){
         completed: false
     };
     
-    api.create(task);
+    api.create(task).then((task) => {
+        if(task){
+            render()
+        }
+    });
+}
+
+function render(){
+    console.log("rendering");
+
 }
