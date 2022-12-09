@@ -96,7 +96,7 @@ function renderList(){
         }
     } );
 }
-/**/
+
 function renderTask({id, title, description, dueDate}){
     let html =`
     <li class="select-none mt-2 py-2 border-b border-amber-300">
@@ -117,8 +117,8 @@ function renderTask({id, title, description, dueDate}){
     return html;
 }
 
-
 function deleteTask(id){
     api.remove(id).then((result) => renderList() );
 }
+
 renderList();
